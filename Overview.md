@@ -15,6 +15,7 @@ TweetyLang assemblies to interface directly with other native assemblies, withou
 ## Features
 ### Syntax
 TweetyLang uses a syntax inspired by the C-family, with a few liberties taken to prioritize clarity and explicitness.
+For a complete specification of TweetyLang’s syntax in EBNF format, refer to [Syntax.md](Syntax.md).
 
 - **Variable declaration**
 ```Tweety
