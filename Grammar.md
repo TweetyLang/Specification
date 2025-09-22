@@ -1,25 +1,25 @@
 ```EBNF
-/* EBNF (Extended Backus–Naur Form) Grammar definitions for TweetyLang */
+(* EBNF (Extended Backus–Naur Form) Grammar definitions for TweetyLang *)
 
-/* GRAMMAR START */
-/* ---------------- */
+(* GRAMMAR START *)
+(* ---------------- *)
 
-program         = { module_definition | import_statement } ;
+program = { module_definition | import_statement } ;
 
-/* Modules */
-/* ---------------- */
+(* Modules *)
+(* ---------------- *)
 module_definition = "module", module_name, "{", "}" ;
 
 module_name = identifier , { ".", identifier } ;
 
 import_statement = "import", module_name, ";" ;
 
-/* Identifiers */
-/* ---------------- */
+(* Identifiers *)
+(* ---------------- *)
 identifier = letter , { letter | digit | "_" } ;
 
-/* Letters & Digits */
-/* ---------------- */
+(* Letters & Digits *)
+(* ---------------- *)
 letter = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L"
        | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X"
        | "Y" | "Z"
