@@ -30,6 +30,19 @@ int add(i32 a, i32 b)
 }
 ```
 
+- **Control structures**
+```Tweety
+// IF ELSE
+if (x > 0)
+{
+  print("X is Positive");
+}
+else
+{
+  print("X is Negative");
+}
+```
+
 ### Typing
 TweetyLang is **statically typed**.
 - Type safety is enforced at compile time.
