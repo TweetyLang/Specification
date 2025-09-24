@@ -29,9 +29,19 @@ function_block = "{" , { statement } , "}" ;
 
 (* Statements *)
 (* ---------------- *)
-statement = return_statement , ";" ;
+statement = return_statement , ";"
+          | assignment , ";" ;
 
-return_statement = "return" , [ identifier ] ;
+assignment = identifier , "=" , expression ;
+return_statement = "return" , [ expression ] ;
+
+(* Expressions *)
+(* ---------------- *)
+expression = term , { ("+" | "-") , term } ;
+term = factor , { ("*" | "/") , factor } ;
+factor = number
+       | identifier
+       | "(" , expression , ")" ;
 
 (* Types *)
 (* ---------------- *)
@@ -46,15 +56,14 @@ type = "i32" ;
 access_modifier = "public"
                 | "private" ;
 
-
-(* Characters & Digits *)
-(* ---------------- *)
 character = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L"
        | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X"
        | "Y" | "Z"
        | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l"
        | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
        | "y" | "z" ;
+
+number = digit , { digit } ;
 
 digit  = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
 
