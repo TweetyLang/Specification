@@ -18,12 +18,20 @@ identifier = character , { character | digit | "_" } ;
 
 (* Functions *)
 (* ---------------- *)
-function_definition = access_modifiers , identifier , block ;
+function_definition = access_modifier , { type | "void" } , identifier , "(" , [ parameters ] , ")" , block ;
+
+(* Types *)
+(* ---------------- *)
+
+(* Parameters are formatted as: type id, type id, type id etc *)
+parameters = parameter , { "," , parameter } ;
+parameter = type , identifier ;
+type = "int" ;
 
 (* Common *)
 (* ---------------- *)
 block = "{" , [ function_definition ] , "}" ;
-access_modifiers = "public" | "private" ;
+access_modifier = "public" | "private" ;
 
 
 (* Characters & Digits *)
