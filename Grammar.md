@@ -14,7 +14,7 @@ top_level_declaration = module_definition
 (* ---------------- *)
 module_definition = "module", module_name, module_block ;
 module_name = identifier , { ".", identifier } ;
-module_block      = "{" , { top_level_declaration } , "}" ;
+module_body      = "{" , { top_level_declaration } , "}" ;
 
 import_statement = "import", module_name, ";" ;
 
@@ -25,7 +25,7 @@ identifier = character , { character | digit | "_" } ;
 (* Functions *)
 (* ---------------- *)
 function_definition = access_modifier , ( type | "void" ) , identifier , "(" , [ parameters ] , ")" , function_block ;
-function_block = "{" , { statement } , "}" ;
+function_body = "{" , { statement } , "}" ;
 
 function_call = identifier , "(", [ arguments ] , ")" ;
 arguments = expression , { "," , expression } ;
