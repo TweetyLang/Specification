@@ -16,11 +16,11 @@ import_statement = "import", module_name, ";" ;
 
 (* Identifiers *)
 (* ---------------- *)
-identifier = letter , { letter | digit | "_" } ;
+identifier = character , { character | digit | "_" } ;
 
-(* Letters & Digits *)
+(* Characters & Digits *)
 (* ---------------- *)
-letter = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L"
+character = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L"
        | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X"
        | "Y" | "Z"
        | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l"
