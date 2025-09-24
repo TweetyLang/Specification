@@ -27,15 +27,21 @@ identifier = character , { character | digit | "_" } ;
 function_definition = access_modifier , ( type | "void" ) , identifier , "(" , [ parameters ] , ")" , function_block ;
 function_block = "{" , { statement } , "}" ;
 
+function_call = identifier , "(", [ arguments ] , ")" ;
+arguments = expression , { "," , expression } ;
+
 (* Statements *)
 (* ---------------- *)
-statement = return_statement , ";"
-          | assignment , ";"
-          | declaration , ";" ;
+statement = raw_statement , ";" ;
+raw_statement = return_statement
+          | assignment
+          | declaration
+          | expression_statement ;
 
 assignment = identifier , "=" , expression ;
 declaration = type , identifier , "=" , expression ;
 return_statement = "return" , [ expression ] ;
+expression_statement = expression ; (* Allow function calls *)
 
 (* Expressions *)
 (* ---------------- *)
@@ -43,6 +49,7 @@ expression = term , { ("+" | "-") , term } ;
 term = factor , { ("*" | "/") , factor } ;
 factor = number
        | identifier
+       | function_call
        | "(" , expression , ")" ;
 
 (* Types *)
