@@ -4,12 +4,18 @@
 (* GRAMMAR START *)
 (* ---------------- *)
 
-program = { module_definition | import_statement } ;
+program = { top_level_declaration } ;
+
+top_level_declaration = module_definition 
+                      | import_statement
+                      | function_definition ;
 
 (* Modules *)
 (* ---------------- *)
-module_definition = "module", module_name, block ;
+module_definition = "module", module_name, module_block ;
 module_name = identifier , { ".", identifier } ;
+module_block      = "{" , { top_level_declaration } , "}" ;
+
 import_statement = "import", module_name, ";" ;
 
 (* Identifiers *)
@@ -18,7 +24,14 @@ identifier = character , { character | digit | "_" } ;
 
 (* Functions *)
 (* ---------------- *)
-function_definition = access_modifier , ( type | "void" ) , identifier , "(" , [ parameters ] , ")" , block ;
+function_definition = access_modifier , ( type | "void" ) , identifier , "(" , [ parameters ] , ")" , function_block ;
+function_block = "{" , { statement } , "}" ;
+
+(* Statements *)
+(* ---------------- *)
+statement = return_statement , ";" ;
+
+return_statement = "return" , [ identifier ] ;
 
 (* Types *)
 (* ---------------- *)
@@ -30,8 +43,8 @@ type = "i32" ;
 
 (* Common *)
 (* ---------------- *)
-block = "{" , { function_definition } , "}" ;
-access_modifier = "public" | "private" ;
+access_modifier = "public"
+                | "private" ;
 
 
 (* Characters & Digits *)
