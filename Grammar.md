@@ -8,15 +8,23 @@ program = { module_definition | import_statement } ;
 
 (* Modules *)
 (* ---------------- *)
-module_definition = "module", module_name, "{", "}" ;
-
+module_definition = "module", module_name, block ;
 module_name = identifier , { ".", identifier } ;
-
 import_statement = "import", module_name, ";" ;
 
 (* Identifiers *)
 (* ---------------- *)
 identifier = character , { character | digit | "_" } ;
+
+(* Functions *)
+(* ---------------- *)
+function_definition = access_modifiers , identifier , block ;
+
+(* Common *)
+(* ---------------- *)
+block = "{" , [ function_definition ] , "}" ;
+access_modifiers = "public" | "private" ;
+
 
 (* Characters & Digits *)
 (* ---------------- *)
