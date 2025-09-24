@@ -12,7 +12,7 @@ top_level_declaration = module_definition
 
 (* Modules *)
 (* ---------------- *)
-module_definition = "module", module_name, module_block ;
+module_definition = "module", module_name, module_body ;
 module_name = identifier , { ".", identifier } ;
 module_body      = "{" , { top_level_declaration } , "}" ;
 
@@ -24,7 +24,7 @@ identifier = character , { character | digit | "_" } ;
 
 (* Functions *)
 (* ---------------- *)
-function_definition = access_modifier , ( type | "void" ) , identifier , "(" , [ parameters ] , ")" , function_block ;
+function_definition = access_modifier , ( type | "void" ) , identifier , "(" , [ parameters ] , ")" , function_body ;
 function_body = "{" , { statement } , "}" ;
 
 function_call = identifier , "(", [ arguments ] , ")" ;
@@ -58,7 +58,9 @@ factor = number
 (* Parameters are formatted as: type id, type id, type id etc *)
 parameters = parameter , { "," , parameter } ;
 parameter = type , identifier ;
-type = "i32" ;
+type = raw_type , pointer_suffix ;
+raw_type = "i32" ;
+pointer_suffix = { "*" } ;
 
 (* Common *)
 (* ---------------- *)
