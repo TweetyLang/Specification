@@ -30,9 +30,11 @@ function_block = "{" , { statement } , "}" ;
 (* Statements *)
 (* ---------------- *)
 statement = return_statement , ";"
-          | assignment , ";" ;
+          | assignment , ";"
+          | declaration , ";" ;
 
 assignment = identifier , "=" , expression ;
+declaration = type , identifier , "=" , expression ;
 return_statement = "return" , [ expression ] ;
 
 (* Expressions *)
