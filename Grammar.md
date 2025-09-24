@@ -59,8 +59,10 @@ factor = number
 parameters = parameter , { "," , parameter } ;
 parameter = type , identifier ;
 type = raw_type , pointer_suffix ;
-raw_type = "i32" ;
 pointer_suffix = { "*" } ;
+
+raw_type = "i32"
+         | "bool" ;
 
 (* Common *)
 (* ---------------- *)
