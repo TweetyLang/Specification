@@ -26,7 +26,7 @@ function_definition = access_modifier , { type | "void" } , identifier , "(" , [
 (* Parameters are formatted as: type id, type id, type id etc *)
 parameters = parameter , { "," , parameter } ;
 parameter = type , identifier ;
-type = "int" ;
+type = "i32" ;
 
 (* Common *)
 (* ---------------- *)
