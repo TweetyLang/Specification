@@ -18,7 +18,7 @@ identifier = character , { character | digit | "_" } ;
 
 (* Functions *)
 (* ---------------- *)
-function_definition = access_modifier , { type | "void" } , identifier , "(" , [ parameters ] , ")" , block ;
+function_definition = access_modifier , ( type | "void" ) , identifier , "(" , [ parameters ] , ")" , block ;
 
 (* Types *)
 (* ---------------- *)
@@ -30,7 +30,7 @@ type = "i32" ;
 
 (* Common *)
 (* ---------------- *)
-block = "{" , [ function_definition ] , "}" ;
+block = "{" , { function_definition } , "}" ;
 access_modifier = "public" | "private" ;
 
 
