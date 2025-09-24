@@ -50,7 +50,10 @@ term = factor , { ("*" | "/") , factor } ;
 factor = number
        | identifier
        | function_call
+       | boolean_literal
        | "(" , expression , ")" ;
+
+boolean_literal = "true" | "false" ;
 
 (* Types *)
 (* ---------------- *)
