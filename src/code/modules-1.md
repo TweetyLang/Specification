@@ -28,7 +28,7 @@ module Module1
 }
 ```
 
-## 3.1.1 Exported Definitions
+### Exported Definitions
 By default, definitions within a module are private and can only be accessed inside the module where they are declared. To make a definition available to other modules when the module is imported, it must be marked with the `export` keyword:
 
 ```tweety
