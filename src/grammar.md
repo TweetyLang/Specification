@@ -19,7 +19,7 @@ top_level_declaration = module_definition
 (* Modules *)
 (* ---------------- *)
 module_definition = "module", module_name, module_body ;
-module_name = identifier , { ".", identifier } ;
+module_name = identifier , { "::", identifier } ;
 module_body      = "{" , { top_level_declaration } , "}" ;
 
 import_statement = "import", module_name, ";" ;
