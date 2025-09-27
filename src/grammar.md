@@ -91,7 +91,7 @@ raw_type = "i32"
 modifier = "export"
          | "extern" ;
 
-string_literal = """ , { character } , """ ;
+string_literal = "\"", { character | escape_sequence }, "\"" ;
 char_literal = "'" , ( character | escape_sequence ), "'" ;
 
 escape_sequence = "\\" , ( "n" | "t" | "r" | "\"" | "'" | "\\" ) ;
