@@ -10,4 +10,8 @@ This specification outlines the implementation of the language as of version 0 (
 
 This release landmark is determined by the TweetyLang committee, which is also responsible for authoring this version of the specification and for its ongoing updates.
 
+### Suggesting Ideas & Changes
+
+TweetyLang is built for developers and feedback is highly valuable. Whether you're reading a printed or online version of this specification, readers are encouraged to visit the TweetyLang Spec repository to open issues, suggest language improvements, propose changes, or discuss ideas.
+
 *TweetyLang is pronounced as 'TWEET-ee-lang' (/ˈtwiːti læŋ/).*
