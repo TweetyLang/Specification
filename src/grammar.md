@@ -81,7 +81,8 @@ type = raw_type , pointer_suffix ;
 pointer_suffix = { "*" } ;
 
 raw_type = "i32"
-         | "bool" ;
+         | "bool"
+         | "char" ;
 
 (* Common *)
 (* ---------------- *)
