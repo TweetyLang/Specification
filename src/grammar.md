@@ -91,8 +91,8 @@ raw_type = "i32"
 modifier = "export"
          | "extern" ;
 
-string_literal = "\"", { character | escape_sequence }, "\"" ;
-char_literal = "'" , ( character | escape_sequence ), "'" ;
+string_literal = "\"", { character | escape_sequence }, "\"" ; (* IMPORTANT: In actual implementation, string literals can have any printable character *)
+char_literal = "'" , ( character | escape_sequence ), "'" ; (* IMPORTANT: In actual implementation, char literals can have any printable character *)
 
 escape_sequence = "\\" , ( "n" | "t" | "r" | "\"" | "'" | "\\" ) ;
 
