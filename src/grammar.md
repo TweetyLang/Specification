@@ -1,7 +1,8 @@
 # 2. Grammar
+
 This is the complete, up-to-date TweetyLang grammar in [EBNF](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form) format. Upon merging updates into this grammar, the changes are propagated to the [ANTLR](https://www.antlr.org/) version, which is used directly by `TweetyLang.Parser`. As such, this document serves as the single source of truth for the TweetyLang grammar.
 
-If you notice differences between this document and the ANTLR grammar, please open an Issue or Pull Request to correct them. For issues in the EBNF grammar, open an issue in this repository. For issues in the ANTLR grammar, open an issue in the TweetyLang repository.
+If you notice differences between this document and the ANTLR grammar, please open an Issue or Pull Request to correct them. For issues in the EBNF grammar, open an issue in the specification repository. For issues in the ANTLR grammar, open an issue in the TweetyLang repository.
 
 ```EBNF
 (* EBNF (Extended Backus–Naur Form) Grammar definitions for TweetyLang *)
