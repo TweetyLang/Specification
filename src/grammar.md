@@ -67,6 +67,7 @@ factor = number
        | identifier
        | function_call
        | boolean_literal
+       | char_literal
        | "(" , expression , ")" ;
 
 boolean_literal = "true" | "false" ;
