@@ -68,6 +68,7 @@ factor = number
        | function_call
        | boolean_literal
        | char_literal
+       | string_literal
        | "(" , expression , ")" ;
 
 boolean_literal = "true" | "false" ;
@@ -90,7 +91,8 @@ raw_type = "i32"
 modifier = "export"
          | "extern" ;
 
-char_literal = "'", ( character | escape_sequence ), "'" ;
+string_literal = """ , { character } , """ ;
+char_literal = "'" , ( character | escape_sequence ), "'" ;
 
 escape_sequence = "\\" , ( "n" | "t" | "r" | "\"" | "'" | "\\" ) ;
 
