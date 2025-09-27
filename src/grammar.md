@@ -92,7 +92,7 @@ modifier = "export"
 
 char_literal = "'", ( character | escape_sequence ), "'" ;
 
-escape_sequence = "\", ( "n" | "t" | "r" | "\"" | "'" | "\" ) ;
+escape_sequence = "\\" , ( "n" | "t" | "r" | "\"" | "'" | "\\" ) ;
 
 character = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L"
        | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X"
