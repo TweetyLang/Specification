@@ -13,14 +13,13 @@ If you notice differences between this document and the ANTLR grammar, please op
 program = { top_level_declaration } ;
 
 top_level_declaration = module_definition 
-                      | import_statement
-                      | function_definition ;
+                      | import_statement ;
 
 (* Modules *)
 (* ---------------- *)
-module_definition = "module", module_name, module_body ;
+module_definition = "module", module_name, module_block ;
 module_name = identifier , { "::", identifier } ;
-module_body      = "{" , { top_level_declaration } , "}" ;
+module_block      = "{" , { definition } , "}" ; (* Allowed items inside of a module *)
 
 import_statement = "import", module_name, ";" ;
 
@@ -28,12 +27,25 @@ import_statement = "import", module_name, ";" ;
 (* ---------------- *)
 identifier = character , { character | digit | "_" } ;
 
+(* Structs *)
+(* ---------------- *)
+struct_definition = { modifier } , "struct" , identifier , object_block ;
+
+object_block = "{" , { function_definition | field_declaration } , "}" ; (* Allowed items inside of an object definition (struct, class, etc) *)
+
 (* Functions *)
 (* ---------------- *)
 function_definition = { modifier } , ( type | "void" ) , identifier , "(" , [ parameters ] , ")" , ( statement_block | ";" ) ;
 
 function_call = identifier , "(", [ arguments ] , ")" ;
 arguments = expression , { "," , expression } ;
+
+definition = struct_definition
+           | function_definition ;
+
+(* Fields *)
+(* ---------------- *)
+field_declaration = type , identifier , "=" , expression , ";" , ;
 
 (* Statements *)
 (* ---------------- *)
@@ -47,7 +59,6 @@ raw_statement = return_statement
 
 (* A Compound Statement is a statement that includes other statements, i.e., an if statement *)
 compound_statement = if_statement ;
-
 
 assignment = identifier , "=" , expression ;
 declaration = type , identifier , "=" , expression ;
