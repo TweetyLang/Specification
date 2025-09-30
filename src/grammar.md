@@ -74,15 +74,19 @@ else_block = "else" , statement_block ;
 (* ---------------- *)
 expression = term , { ("+" | "-") , term } ;
 term = factor , { ("*" | "/") , factor } ;
-factor = number
-       | identifier
-       | function_call
-       | object_instantiation
-       | boolean_literal
-       | char_literal
-       | string_literal
-       | "(" , expression , ")" ;
 
+(* Factor is either a member access or a primary expression *)
+factor = member_access | primary ;
+primary = number
+        | boolean_literal
+        | char_literal
+        | string_literal
+        | object_instantiation
+        | function_call
+        | identifier
+        | "(" , expression , ")" ;
+
+member_access = primary , { ".", identifier, [ "(", [ arguments ], ")" ] } ;
 boolean_literal = "true" | "false" ;
 object_instantiation = "new" , identifier , "(", [ arguments ] , ")" ;
 
