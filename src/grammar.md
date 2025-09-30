@@ -97,7 +97,8 @@ pointer_suffix = { "*" } ;
 
 raw_type = "i32"
          | "bool"
-         | "char" ;
+         | "char"
+         | identifier ;
 
 (* Common *)
 (* ---------------- *)
