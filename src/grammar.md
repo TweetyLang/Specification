@@ -61,7 +61,7 @@ raw_statement = return_statement
 compound_statement = if_statement ;
 
 assignment = identifier , "=" , expression ;
-declaration = type , identifier , "=" , expression ;
+declaration = type , whitespace , identifier , "=" , expression ;
 return_statement = "return" , [ expression ] ;
 expression_statement = expression ; (* Allow function calls, object instantiation, etc *)
 
@@ -109,6 +109,8 @@ string_literal = "\"", { character | escape_sequence }, "\"" ; (* IMPORTANT: In 
 char_literal = "'" , ( character | escape_sequence ), "'" ; (* IMPORTANT: In actual implementation, char literals can have any printable character *)
 
 escape_sequence = "\\" , ( "n" | "t" | "r" | "\"" | "'" | "\\" ) ;
+
+whitespace = " " | "\t" | "\n" | "\r" ;
 
 character = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L"
        | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X"
