@@ -63,7 +63,7 @@ compound_statement = if_statement ;
 assignment = identifier , "=" , expression ;
 declaration = type , identifier , "=" , expression ;
 return_statement = "return" , [ expression ] ;
-expression_statement = expression ; (* Allow function calls *)
+expression_statement = expression ; (* Allow function calls, object instantiation, etc *)
 
 (* If Statement *)
 (* ---------------- *)
@@ -77,12 +77,14 @@ term = factor , { ("*" | "/") , factor } ;
 factor = number
        | identifier
        | function_call
+       | object_instantiation
        | boolean_literal
        | char_literal
        | string_literal
        | "(" , expression , ")" ;
 
 boolean_literal = "true" | "false" ;
+object_instantiation = "new" , identifier , "(", [ arguments ] , ")" ;
 
 (* Types *)
 (* ---------------- *)
