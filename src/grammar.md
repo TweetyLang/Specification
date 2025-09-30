@@ -45,7 +45,7 @@ definition = struct_definition
 
 (* Fields *)
 (* ---------------- *)
-field_declaration = type , identifier , "=" , expression , ";" , ;
+field_declaration = type , identifier , [ "=" , expression ] , ";" ;
 
 (* Statements *)
 (* ---------------- *)
