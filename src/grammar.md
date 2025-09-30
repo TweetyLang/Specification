@@ -75,7 +75,6 @@ else_block = "else" , statement_block ;
 expression = term , { ("+" | "-") , term } ;
 term = factor , { ("*" | "/") , factor } ;
 
-(* Factor is either a member access or a primary expression *)
 factor = member_access | primary ;
 primary = number
         | boolean_literal
