@@ -17,7 +17,7 @@ public i32 MyNumber
         return value + 10;
     }
 
-    // Type.MyNumber = 10 will print and then update MyNumber's current value.
+    // Type.MyNumber = 10 will print some text and then update MyNumber's current value.
     set 
     {
         printf("Set MyNumber.");
