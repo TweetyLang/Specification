@@ -3,7 +3,5 @@ Fields are named variables declared inside a type body (such as a struct or clas
 
 Fields declarations consist of optional modifier keywords, it's type, a unique name and optionally an assignment.
 ```tweety
-struct MyStruct 
-{
-    public i32 MyNumber = 16;
-}
+public i32 MyNumber = 16;
+```
