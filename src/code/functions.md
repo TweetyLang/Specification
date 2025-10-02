@@ -1,5 +1,5 @@
 # 4. Functions
-Functions are a block of reusable code that accept input parameters (arguments) and produce an output value (return value). Functions can also include modifier keywords that alter or exetend their behaviour.
+Functions are a block of reusable code that accept input parameters (arguments) and produce an output value (return value). Functions can also include modifier keywords that alter or extend their behaviour.
 
 ### Invoking Functions
 Functions can be static or instance-based. Static functions can be invoked directly without reference to an object:

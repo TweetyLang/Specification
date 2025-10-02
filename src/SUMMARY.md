@@ -10,3 +10,5 @@
 - [Functions](./code/functions.md)
   - [Function Declaration](./code/functions-1.md)
 - [Structs](./code/structs.md)
+  - [Struct Declaration](./code/structs-1.md)
+- [Fields](./code/fields.md)

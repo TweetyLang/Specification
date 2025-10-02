@@ -1,1 +1,2 @@
 # 5. Structs
+Structs are user-defined types for grouping related variables into a single entity. They allow developers to organize data logically under one name. Structs can also define instance methods, enabling encapsulation of both data and behavior within the same construct.
