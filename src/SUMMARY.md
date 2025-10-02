@@ -9,5 +9,4 @@
   - [Import Statements](./code/modules-2.md)
 - [Functions](./code/functions.md)
   - [Function Declaration](./code/functions-1.md)
-
-
+- [Structs](./code/structs.md)
