@@ -8,4 +8,4 @@ export struct MyStruct
 }
 ```
 
-A Struct body can consist of [functions](functions.md) and [fields](fields.md).
+A Struct body can consist of [functions](functions.md), [fields](fields.md) and [properties](properties.md).
