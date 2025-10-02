@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Struct Declaration - TweetyLang Specification</title>
+        <title>Properties - TweetyLang Specification</title>
 
 
         <!-- Custom HTML head -->
@@ -175,26 +175,37 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="51-struct-declaration"><a class="header" href="#51-struct-declaration">5.1 Struct Declaration</a></h1>
-<p>A Struct declaration consists of optional modifier keywords, followed by the <code>struct</code> keyword, it's identifier and then its body.</p>
-<pre><code class="language-tweety">export struct MyStruct 
+                        <h1 id="7-properties"><a class="header" href="#7-properties">7. Properties</a></h1>
+<p>Properties are encapsulated <a href="fields.html">fields</a> that allow functions to be ran when their value is read (getter) or modified (setter).</p>
+<p>Property declarations consist of optional modifier keywords, it's type, a unique name, getters and setter definitions, and optionally an assignment.</p>
+<p><strong>Both of these examples are valid properties:</strong></p>
+<pre><code class="language-tweety">public i32 MyNumber { get; set; } = 16;
+</code></pre>
+<pre><code class="language-tweety">public i32 MyNumber 
 {
-    // Struct Body
+    // Type.MyNumber will return MyNumber's current value + 10.
+    get 
+    {  
+        return value + 10;
+    }
+
+    // Type.MyNumber = 10 will print and then update MyNumber's current value.
+    set 
+    {
+        printf("Set MyNumber.");
+        field = value;
+    }
 }
 </code></pre>
-<p>A Struct body can consist of <a href="functions.html">functions</a>, <a href="fields.html">fields</a> and <a href="properties.html">properties</a>.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../code/structs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../code/fields.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../code/fields.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -202,13 +213,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../code/structs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../code/fields.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../code/fields.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>

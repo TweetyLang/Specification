@@ -398,11 +398,33 @@ maths.Add(1, 3);
     // Struct Body
 }
 </code></pre>
-<p>A Struct body can consist of <a href="code/functions.html">functions</a> and <a href="code/fields.html">fields</a>.</p>
+<p>A Struct body can consist of <a href="code/functions.html">functions</a>, <a href="code/fields.html">fields</a> and <a href="code/properties.html">properties</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="6-fields"><a class="header" href="#6-fields">6. Fields</a></h1>
 <p>Fields are named variables declared inside a type body (such as a struct or class) that store data specific to instances of that type.</p>
 <p>Fields declarations consist of optional modifier keywords, it's type, a unique name and optionally an assignment.</p>
 <pre><code class="language-tweety">public i32 MyNumber = 16;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="7-properties"><a class="header" href="#7-properties">7. Properties</a></h1>
+<p>Properties are encapsulated <a href="code/fields.html">fields</a> that allow functions to be ran when their value is read (getter) or modified (setter).</p>
+<p>Property declarations consist of optional modifier keywords, it's type, a unique name, getters and setter definitions, and optionally an assignment.</p>
+<p><strong>Both of these examples are valid properties:</strong></p>
+<pre><code class="language-tweety">public i32 MyNumber { get; set; } = 16;
+</code></pre>
+<pre><code class="language-tweety">public i32 MyNumber 
+{
+    // Type.MyNumber will return MyNumber's current value + 10.
+    get 
+    {  
+        return value + 10;
+    }
+
+    // Type.MyNumber = 10 will print and then update MyNumber's current value.
+    set 
+    {
+        printf("Set MyNumber.");
+        field = value;
+    }
+}
 </code></pre>
 
                     </main>
