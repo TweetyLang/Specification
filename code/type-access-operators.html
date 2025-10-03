@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Properties - TweetyLang Specification</title>
+        <title>Type Access Operators - TweetyLang Specification</title>
 
 
         <!-- Custom HTML head -->
@@ -175,40 +175,30 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="7-properties"><a class="header" href="#7-properties">7. Properties</a></h1>
-<p>Properties are encapsulated <a href="fields.html">fields</a> that allow functions to be ran when their value is read (getter) or modified (setter).</p>
-<p>Property declarations consist of optional modifier keywords, it's type, a unique name, getters and setter definitions, and optionally an assignment.</p>
-<p><strong>Both of these examples are valid properties:</strong></p>
-<pre><code class="language-tweety">public i32 MyNumber { get; set; } = 16;
+                        <h1 id="8-type-access-operators"><a class="header" href="#8-type-access-operators">8. Type Access Operators</a></h1>
+<p>Different operators are used to access members of a type depending on whether the member is static, instance-based, or accessed through a pointer. These are referred to as "Type Access Operators".</p>
+<p><strong>Static Access</strong></p>
+<p>The <code>::</code> operator is used on a type to access its static members.</p>
+<pre><code class="language-tweety">Type::StaticMethod();
 </code></pre>
-<pre><code class="language-tweety">public i32 MyNumber 
-{
-    // Type.MyNumber will return MyNumber's current value + 10.
-    get 
-    {  
-        return value + 10;
-    }
-
-    // Type.MyNumber = 10 will print some text and then update MyNumber's current value.
-    set 
-    {
-        printf("Set MyNumber.");
-        field = value;
-    }
-}
+<p><strong>Instance Access</strong></p>
+<p>The <code>.</code> operator is used on an instance of a type to access its instance members.</p>
+<pre><code class="language-tweety">Type myInstance = new Type();
+myInstace.InstanceMethod();
+</code></pre>
+<p><strong>Pointer Access</strong></p>
+<p>The <code>-&gt;</code> operator is used on a pointer to an instance of a type to access its instance members.</p>
+<pre><code class="language-tweety">myInstancePointer-&gt;InstanceMethod();
 </code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../code/fields.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../code/properties.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../code/type-access-operators.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -216,13 +206,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../code/fields.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../code/properties.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../code/type-access-operators.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>

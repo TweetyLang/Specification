@@ -426,6 +426,21 @@ maths.Add(1, 3);
     }
 }
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="8-type-access-operators"><a class="header" href="#8-type-access-operators">8. Type Access Operators</a></h1>
+<p>Different operators are used to access members of a type depending on whether the member is static, instance-based, or accessed through a pointer. These are referred to as "Type Access Operators".</p>
+<p><strong>Static Access</strong></p>
+<p>The <code>::</code> operator is used on a type to access its static members.</p>
+<pre><code class="language-tweety">Type::StaticMethod();
+</code></pre>
+<p><strong>Instance Access</strong></p>
+<p>The <code>.</code> operator is used on an instance of a type to access its instance members.</p>
+<pre><code class="language-tweety">Type myInstance = new Type();
+myInstace.InstanceMethod();
+</code></pre>
+<p><strong>Pointer Access</strong></p>
+<p>The <code>-&gt;</code> operator is used on a pointer to an instance of a type to access its instance members.</p>
+<pre><code class="language-tweety">myInstancePointer-&gt;InstanceMethod();
+</code></pre>
 
                     </main>
 
