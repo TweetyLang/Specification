@@ -13,3 +13,4 @@
   - [Struct Declaration](./code/structs-1.md)
 - [Fields](./code/fields.md)
 - [Properties](./code/properties.md)
+- [Type Access Operators](./code/type-access-operators.md)
